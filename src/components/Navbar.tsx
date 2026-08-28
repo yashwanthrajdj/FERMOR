@@ -102,12 +102,6 @@ export default function Navbar() {
             Fermor.
           </span>
         </div>
-        <button 
-          onClick={toggleTheme}
-          className="w-10 h-10 rounded-full bg-white/80 dark:bg-[#1E1E1E]/80 backdrop-blur-md border border-[#E5E5E5] dark:border-[#333] flex items-center justify-center text-[#1A1A1A] dark:text-white shadow-lg"
-        >
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
       </div>
 
       {/* Floating Dynamic Glassmorphed Navbar (Mobile Only) */}
@@ -144,6 +138,16 @@ export default function Navbar() {
               </span>
             </motion.a>
           ))}
+
+          {/* Theme Menu Trigger */}
+          <motion.button 
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleTheme}
+            className="flex flex-col items-center justify-center w-16 h-14 rounded-xl relative z-10 text-[#64748B] dark:text-[#9CA3AF] hover:text-[#1A1A1A] dark:hover:text-white transition-colors"
+          >
+            {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            <span className="text-[9px] font-bold tracking-wide opacity-70 mt-1">Theme</span>
+          </motion.button>
 
           {/* More Menu Trigger */}
           <motion.button 

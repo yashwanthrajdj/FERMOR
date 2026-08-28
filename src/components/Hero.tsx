@@ -133,16 +133,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="relative order-1"
           >
-            {/* Minimal Mobile Floating Badge */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="fixed bottom-6 right-6 z-50 lg:hidden"
-            >
-              <a href="#calculator" className="bg-[#004D40] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_8px_30px_rgba(0,77,64,0.4)] border border-white/20 backdrop-blur-md">
-                <Activity size={24} />
-              </a>
-            </motion.div>
+
 
             <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-[#004D40]/20 dark:border-[#10B981]/20 bg-[#004D40]/5 dark:bg-[#10B981]/10 mb-8 backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-[#004D40] dark:bg-[#10B981] animate-pulse" />
