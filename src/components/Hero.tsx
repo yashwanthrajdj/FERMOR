@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Info, ArrowRight, Activity } from 'lucide-react';
+import { Info, ArrowRight } from 'lucide-react';
 
 const Slider = ({ value, min, max, step, onChange, label, displayValue, icon: Icon }: any) => {
   const percentage = ((value - min) / (max - min)) * 100;
