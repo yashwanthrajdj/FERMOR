@@ -1,98 +1,51 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
-const navLinks = [
-  { label: 'Calculators', href: '#calculators' },
-  { label: 'Analysis', href: '#analysis' },
-  { label: 'Gold', href: '#tools' },
-  { label: 'Tax & Salary', href: '#tools' },
-];
-
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-lg bg-cyan-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow">
-            <span className="text-white font-extrabold text-lg leading-none">F</span>
+    <nav className="sticky top-0 z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-[#E5E5E5]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          <div className="flex-shrink-0 flex items-center">
+            <span className="font-serif text-2xl font-bold text-[#1A1A1A] tracking-tight">Fermor.</span>
           </div>
-          <span className="text-slate-900 font-extrabold text-xl tracking-tight">Fermor</span>
-        </a>
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#" className="text-[#4A4A4A] hover:text-[#1A1A1A] text-sm font-medium transition-colors">Calculators</a>
+            <a href="#" className="text-[#4A4A4A] hover:text-[#1A1A1A] text-sm font-medium transition-colors">Analysis</a>
+            <a href="#" className="text-[#4A4A4A] hover:text-[#1A1A1A] text-sm font-medium transition-colors">About</a>
+            <a href="#" className="text-[#4A4A4A] hover:text-[#1A1A1A] text-sm font-medium transition-colors">Contact</a>
+          </div>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-cyan-600 rounded-lg hover:bg-cyan-50 transition-all duration-200"
-            >
-              {link.label}
+          <div className="hidden md:flex items-center">
+            <a href="#" className="bg-[#004D40] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#00382E] transition-colors shadow-sm">
+              Get started — it's free
             </a>
-          ))}
-        </div>
+          </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <a href="#" className="text-sm font-medium text-slate-600 hover:text-cyan-600 transition-colors">
-            Sign in
-          </a>
-          <a
-            href="#cta"
-            className="bg-cyan-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl hover:bg-cyan-700 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all duration-200"
-          >
-            Get started
-          </a>
+          <div className="flex md:hidden items-center">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-[#1A1A1A] p-2">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden bg-white border-b border-slate-100"
-          >
-            <div className="px-4 py-4 space-y-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block px-4 py-3 text-sm font-medium text-slate-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-xl transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <div className="pt-3 border-t border-slate-100 mt-2">
-                <a
-                  href="#cta"
-                  onClick={() => setOpen(false)}
-                  className="block w-full text-center bg-cyan-600 text-white text-sm font-semibold px-5 py-3 rounded-xl"
-                >
-                  Get started — it's free
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <div className="md:hidden bg-[#FAF9F6] border-b border-[#E5E5E5] px-4 pt-2 pb-6 space-y-4 shadow-xl">
+          <a href="#" className="block text-[#1A1A1A] font-medium text-lg">Calculators</a>
+          <a href="#" className="block text-[#1A1A1A] font-medium text-lg">Analysis</a>
+          <a href="#" className="block text-[#1A1A1A] font-medium text-lg">About</a>
+          <a href="#" className="block text-[#1A1A1A] font-medium text-lg">Contact</a>
+          <div className="pt-4">
+            <a href="#" className="block w-full text-center bg-[#004D40] text-white px-5 py-3 rounded font-medium">
+              Get started — it's free
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
