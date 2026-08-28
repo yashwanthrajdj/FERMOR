@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Check, Info, ArrowRight, Activity, Percent, Clock } from 'lucide-react';
+import { Info, ArrowRight, Activity } from 'lucide-react';
 
 const Slider = ({ value, min, max, step, onChange, label, displayValue, icon: Icon }: any) => {
   const percentage = ((value - min) / (max - min)) * 100;
@@ -58,7 +58,6 @@ export default function Hero() {
   const [showFormula, setShowFormula] = useState(false);
 
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 80]);
   const y2 = useTransform(scrollY, [0, 500], [0, -120]);
 
   useEffect(() => {

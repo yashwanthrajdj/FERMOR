@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Target, TrendingUp, Shield, Zap, ChevronRight } from 'lucide-react';
 
 const assetClasses = [
@@ -8,7 +8,7 @@ const assetClasses = [
   { id: 'cash', label: 'Liquid Assets', pct: 15, color: '#10b981', icon: Target, delay: 0.3 },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -16,7 +16,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100, damping: 20 } },
 };
