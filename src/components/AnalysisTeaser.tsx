@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function AnalysisTeaser() {
   return (
-    <section className="py-24 bg-white dark:bg-[#1A1A1A] border-b border-[#E5E5E5] dark:border-[#333] transition-colors duration-300">
+    <section id="analysis" className="py-24 bg-white dark:bg-[#1A1A1A] border-b border-[#E5E5E5] dark:border-[#333] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">

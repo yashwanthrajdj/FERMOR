@@ -9,6 +9,7 @@ import AnalysisTeaser from './components/AnalysisTeaser';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import AboutSection from './components/AboutSection';
+import AllInOne from './components/AllInOne';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <main>
         <Hero />
         <AboutSection />
+        <AllInOne />
         <Categories />
         <TransparencySection />
         <DashboardPreview />

@@ -21,7 +21,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 bg-white dark:bg-[#1A1A1A] relative overflow-hidden transition-colors duration-300">
+    <section id="about" className="py-24 sm:py-32 bg-white dark:bg-[#1A1A1A] relative overflow-hidden transition-colors duration-300">
       
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#E2E8F0] dark:via-[#333] to-transparent" />

@@ -62,9 +62,14 @@ export default function Navbar() {
             
             {/* Desktop Links */}
             <div className="hidden md:flex items-center space-x-10 bg-white/50 dark:bg-[#1E1E1E]/50 backdrop-blur-md px-8 py-3 rounded-full border border-white dark:border-[#333] shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]">
-              {['Calculators', 'Transactions', 'Analysis', 'About'].map((item) => (
-                <a key={item} href="#" className="text-[#4A4A4A] dark:text-[#E5E7EB] hover:text-[#004D40] dark:hover:text-[#10B981] text-sm font-semibold transition-all hover:-translate-y-0.5">
-                  {item}
+              {[
+                { name: 'About', href: '#about' },
+                { name: 'Calculators', href: '#calculators' },
+                { name: 'Transactions', href: '#transactions' },
+                { name: 'Analysis', href: '#analysis' }
+              ].map((item) => (
+                <a key={item.name} href={item.href} className="text-[#4A4A4A] dark:text-[#E5E7EB] hover:text-[#004D40] dark:hover:text-[#10B981] text-sm font-semibold transition-all hover:-translate-y-0.5">
+                  {item.name}
                 </a>
               ))}
             </div>

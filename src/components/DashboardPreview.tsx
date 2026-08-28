@@ -35,7 +35,7 @@ export default function DashboardPreview() {
   };
 
   return (
-    <section className="py-24 bg-[#FAF9F6] dark:bg-[#121212] border-b border-[#E5E5E5] dark:border-[#333] overflow-hidden transition-colors duration-300">
+    <section id="transactions" className="py-24 bg-[#FAF9F6] dark:bg-[#121212] border-b border-[#E5E5E5] dark:border-[#333] overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-serif text-[#1A1A1A] dark:text-[#E5E7EB] font-medium mb-4">

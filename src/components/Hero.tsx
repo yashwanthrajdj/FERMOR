@@ -88,6 +88,36 @@ export default function Hero() {
   return (
     <section className="pt-20 pb-32 bg-[#FAF9F6] dark:bg-[#121212] relative overflow-hidden transition-colors duration-300">
       
+      {/* Clean Parallel Contour Lines (No Overlapping) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center">
+        
+        {/* Concentric, strictly expanding asymmetrical curves */}
+        <motion.svg 
+          viewBox="0 0 1000 1000" 
+          className="absolute w-[150vw] h-[150vh] text-[#004D40] dark:text-[#10B981] opacity-[0.08] dark:opacity-[0.04]" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="1.5"
+          animate={{ scale: [1, 1.02, 1], rotate: [0, 1, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        >
+          {[...Array(60)].map((_, i) => (
+            <ellipse 
+              key={i}
+              cx={500 - (i * 6)} 
+              cy={500 + (i * 3)}
+              rx={10 + i * 35} 
+              ry={5 + i * 25}
+              transform="rotate(-20 500 500)"
+            />
+          ))}
+        </motion.svg>
+        
+        {/* Soft glowing ambient orbs */}
+        <div className="absolute top-[20%] left-[10%] w-[400px] h-[400px] bg-[#004D40]/10 dark:bg-[#10B981]/10 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-[#10B981]/5 dark:bg-[#047857]/10 rounded-full blur-[120px] animate-pulse" />
+      </div>
+
       {/* Exquisite Rupee Background Watermark */}
       <motion.div 
         style={{ y: y2 }} 
